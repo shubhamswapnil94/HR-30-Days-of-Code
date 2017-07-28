@@ -1,0 +1,51 @@
+int main() {
+    string time;
+    string h,m,s,clock;
+    cin>>time;
+     int h1 = (int)time[0] - '0';
+     int h2 = (int)time[1] - '0';
+     int h3 = (h1*10) + (h2);
+     //if time is in AM
+     if(time[8] == 'A')
+     {
+         if(h3==12)
+         {
+             cout<<"00";
+             for(int i=2;i<8;i++)
+             {
+                 cout<<time[i];
+             }
+         }
+         else 
+         {
+             cout<<setw(2) << setfill('0')<<h3;
+             for(int i=2;i<8;i++)
+             {
+                 cout<<time[i];
+             }
+         }
+     }
+    
+     //if time is in PM
+     if(time[8] == 'P')
+     {
+         if(h3==12)
+         {
+             cout<<h3;
+             for(int i=2;i<8;i++)
+             {
+                 cout<<time[i];
+             }
+         }
+         else 
+         {
+             cout<<h3+12;
+             for(int i=2;i<8;i++)
+             {
+                 cout<<time[i];
+             }
+         }
+     }
+    
+    return 0;
+}
