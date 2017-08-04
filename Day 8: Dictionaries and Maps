@@ -1,0 +1,41 @@
+#include<iostream>
+#include <map>
+
+
+using namespace std;
+
+int main() {
+    map<string,int> phone;
+    
+    
+    string key;
+    string name;
+    int num;
+    long value;
+    cin>>num;
+    cin.ignore();
+    
+      for(int i =0;i<num;i++)
+      {
+          
+          cin>>key;
+          cin.ignore();
+          cin>>value;
+          phone.insert(pair<string,int>(key,value));
+      }
+
+  while(cin>>name)
+  {
+      if(phone.find(name) == phone.end())
+      {
+          cout<<"Not found"<<endl;
+         
+      }
+      else
+      {
+          cout<<name<<"="<<phone.find(name)->second<<endl;
+      }
+  }
+   return 0;
+    }
+   
